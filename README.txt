@@ -1,7 +1,6 @@
 Log into Bouchet and set up the core machine learning environment.
 
 # 1. Navigate to your specific project folder
-cd /nfs/roberts/project/cpsc4520/cpsc4520_jcp87/factor-model
 
 # 2. Load the Conda module and create the environment
 module load miniconda
@@ -31,10 +30,9 @@ exit
 
 Go back to your main project folder and create your Slurm script.
 
-cd /nfs/roberts/project/cpsc4520/cpsc4520_jcp87/factor-model
 nano run_factor.sh
 
-Paste this configuration (we can drop the time limit to 12 hours since we aren't processing the extra 6 years of scraped data):
+Paste this configuration (we can drop the time limit to 12 hours:
 
 #!/bin/bash
 #SBATCH --job-name=factor_vae
@@ -50,7 +48,6 @@ module load miniconda
 conda activate factor_env
 
 # 2. Navigate exactly to your project directory
-cd /nfs/roberts/project/cpsc4520/cpsc4520_jcp87/factor-model
 
 # 3. Execute the code
 echo "Starting FactorVAE Training on Bouchet GPU..."
